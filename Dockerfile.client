@@ -1,0 +1,28 @@
+# Use an official Node runtime as a parent image
+FROM node:16-alpine AS build
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application
+COPY . .
+
+# Build the React app
+RUN npm run build:client
+
+# Use serve to serve the static files
+FROM node:16-alpine
+RUN npm install -g serve
+COPY --from=build /app/dist /app
+
+# Expose port 5000
+EXPOSE 5000
+
+# Start serve
+CMD ["serve", "-s", "app", "-l", "5000"]

@@ -1,0 +1,37 @@
+{
+  "name": "using_serve",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build:client": "webpack",
+    "build:server": "tsc -p tsconfig.server.json",
+    "start:client": "webpack serve --mode development --port 5000",
+    "start:server": "node dist/server/main.js",
+    "build": "npm run build:client && npm run build:server",
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\""
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "concurrently": "^7.3.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "gh-pages": "^6.1.1",
+    "html-webpack-plugin": "^5.6.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.3.9",
+    "@nestjs/core": "^10.3.9",
+    "@nestjs/platform-express": "^10.3.9",
+    "@nestjs/platform-socket.io": "^10.3.9",
+    "@nestjs/websockets": "^10.3.9",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "socket.io": "^4.7.5"
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+	  "target": "ES6",
+	  "module": "commonjs",
+	  "lib": ["dom", "ES6"],
+	  "allowJs": true,
+	  "jsx": "react",
+	  "outDir": "./dist",
+	  "strict": true,
+	  "moduleResolution": "node",
+	  "esModuleInterop": true,
+	  "skipLibCheck": true,
+	  "forceConsistentCasingInFileNames": true,
+	  "experimentalDecorators": true,
+	  "emitDecoratorMetadata": true
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["node_modules"]
+  }
+  
